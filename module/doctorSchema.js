@@ -12,51 +12,7 @@ const doctorSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    firstname: {
-        type: String,
-        required: true
-    },
-    lastname: {
-        type: String,
-        required: true
-    },
-    mobile: {
-        type: String,
-        required: false
-    },
-    email: {
-        type: String,
-        required: true,
-        unique:true
-    },
-    state: {
-        type: String,
-        required: false
-    },
-    city: {
-        type: String,
-        required: false
-    },
-    Address: {
-        type: String,
-        required: false
-    },
-    dateofbirth:{
-        type: String,
-        required: false
-    },
-    gender:{
-        type: String,
-        required: false
-    },
-    Online: {
-        type: Boolean,
-        required: false
-    },
-    Fees: {
-        type: String,
-        required: false
-    },
+  
     Degree:[{
         Name: {
             type: String,
