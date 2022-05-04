@@ -59,7 +59,13 @@ addAppointment = async(req, res) => {
     // taking input fomr req.body which send by client
     const{doctorID,patientID,concern,status,fee, bookingDate, appointmentDate,appointmentTime}=req.body ;
         try{
-      
+        var meetingDetails = await createZoomMeeting();
+        if(meetingDetails=={} ||meetingDetails.meetingID === null || meetingDetails.meetingpwd ==null)
+          res.status(422).json({message:"Error occured while booking appointmnet"});
+        else{
+          console.log(meetingDetails);
+          let meetingID = meetingDetails.meetingID;
+          let meetingpwd = meetingDetails.meetingpwd;
         var newAppointment = new Appointment({ doctorID,patientID,concern,status,fee, bookingDate, appointmentDate,appointmentTime, meetingID,meetingpwd});
         await newAppointment.save();
          // sending json to client side
