@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
     const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
     req.userData = { userId: decodedToken.userId };
     
-    console.log("I am Middleware Authentication");
+   
     next();
   } catch (err) {
     console.log("Authentication Failed ");
