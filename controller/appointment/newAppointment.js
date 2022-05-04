@@ -11,11 +11,11 @@ var createZoomMeeting = async() =>{
     iss: "7JqB9DRXSMSk_UeS-luIUg",
     exp: new Date().getTime() + 5000,
   };
-  const token = jwt.sign(payload, "PEF8elFhiMXF1We8lqzcXecoaWxV5JrD4HXy");
+  const token = jwt.sign(payload, "ENTER ZOOM KEY");
   let meetingDetails = {};
   var options = {
     method: "POST",
-    uri: "https://api.zoom.us/v2/users/" + "divyanshbansal13@gmail.com" + "/meetings",
+    uri: "https://api.zoom.us/v2/users/" + "vikash14609@gmail.com" + "/meetings",
     body: {
       topic: "Meeting",
       type: 1,
